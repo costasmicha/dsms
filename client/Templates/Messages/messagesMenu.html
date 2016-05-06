@@ -1,0 +1,20 @@
+<template name="messagesMenu">
+	<div class="ui no-padd-bottom basic inverted brown very padded segment">
+		<div class="ui container">
+			<h1 class="ui header">
+				Messages
+			</h1>
+			<div class="ui three item secondary pointing menu">
+				<a href="{{pathFor 'messages.one'}}" class="{{isActiveRoute regex='one'}} item">
+					One
+				</a>
+				<a href="{{pathFor 'messages.all'}}" class="{{isActiveRoute regex='all'}} item">
+					All
+				</a>
+				<a href="{{pathFor 'messages.multi'}}" class="{{isActiveRoute regex='multi'}} item">
+					Multiple
+				</a>				
+			</div>	
+		</div>
+	</div>
+</template>

@@ -1,0 +1,55 @@
+<template name="MessagesMulti">
+
+	{{> messagesMenu}}
+
+	<div class="ui main container">
+
+		<!-- {{#if Template.subscriptionsReady}} -->
+		<section class="ui raised very padded segment">
+			<form class="ui form">
+				<div class="field">
+					<label>To</label>
+					<div class="ui fluid search multiple selection dropdown">
+ 						<!--{{> EasySearch.Input index=customersAllIndex attributes=inputAttributes}}
+						<i class="dropdown icon"></i>
+						<div class="default text">Select Customer</div>
+						<div class="menu">
+							{{#EasySearch.Each index=customersAllIndex}}
+								<div class="item" data-value="{{__originalId}}">
+									{{firstname}} {{lastname}}
+								</div>
+							{{/EasySearch.Each}}
+						</div> -->
+						<input type="hidden" name="customer" id="customersFilter">
+						<i class="dropdown icon"></i>
+						<div class="default text">Select Customer</div>
+						<div class="menu">
+							{{#each customers}}
+								<div class="item" data-value="{{_id}}">
+									{{firstname}} {{lastname}}
+								</div>
+							{{/each}}
+						</div>
+					</div>
+				</div>				
+				<div class="field">
+					<label>Text</label>
+					<p>Type #name in the place you want name to appear in the sms</p>
+					<textarea name="text" rows="3"></textarea>
+				</div>
+				<button type="submit" class="ui green submit button">
+					<i class="send icon"></i>
+					Send
+				</button>
+			</form>
+		</section>
+<!-- 		{{else}}
+			<section class="ui raised very padded segment">
+				<h2 class="ui header">
+					wait a sec...
+				</h2>
+			</section>
+		{{/if}} -->
+
+	</div>
+</template>

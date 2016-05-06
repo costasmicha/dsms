@@ -1,0 +1,87 @@
+<template name="More">
+	<div class="ui no-marg-bottom secondary inverted green menu">
+		<a href="/" class="borderless header item">
+			APP NAME
+		</a>		
+	</div>
+
+		<div class="ui padded grid">
+
+			<a href="{{pathFor route='notifications.tomorrow'}}" class="m-b-2 brown row">
+				<div class="three wide column">
+					<div class="ui basic fluid segment">
+						<i class="announcement big green icon"></i>
+					</div>
+				</div>
+				<div class="eleven wide left aligned column">
+					<div class="ui no-border basic segment">
+						<h3 class="ui header">
+							Notifications
+						</h3>
+					</div>
+				</div>
+			</a>
+
+			<a href="{{pathFor route='messages'}}" class="m-b-2 brown row">
+				<div class="three wide column">
+					<div class="ui basic fluid segment">
+						<i class="comments big green icon"></i>
+					</div>
+				</div>
+				<div class="eleven wide left aligned column">
+					<div class="ui no-border basic segment">
+						<h3 class="ui header">
+							Messages
+						</h3>
+					</div>
+				</div>
+			</a>
+
+			<a href="{{pathFor route='profile'}}" class="m-b-2 brown row">
+				<div class="three wide column">
+					<div class="ui basic fluid segment">
+						<i class="user big green icon"></i>
+					</div>
+				</div>
+				<div class="eleven wide left aligned column">
+					<div class="ui no-border basic segment">
+						<h3 class="ui header">
+							Profile
+						</h3>
+					</div>
+				</div>
+			</a>			
+
+			<a href="{{pathFor 'atChangePwd' }}" class="m-b-2 brown row">
+				<div class="three wide column">
+					<div class="ui basic fluid segment">
+						<i class="retweet big green icon"></i>
+					</div>
+				</div>
+				<div class="eleven wide left aligned column">
+					<div class="ui no-border basic segment">
+						<h3 class="ui header">
+							Change Password
+						</h3>
+					</div>
+				</div>
+			</a>
+
+			<a data-action="logout" class="m-b-2 brown row">
+				<div class="three wide column">
+					<div class="ui basic fluid segment">
+						<i class="sign out big green icon"></i>
+					</div>
+				</div>
+				<div class="eleven wide left aligned column">
+					<div class="ui no-border basic segment">
+						<h3 class="ui header">
+							Log Out
+						</h3>
+					</div>
+				</div>
+			</a>			
+
+		</div>		
+	
+</template>

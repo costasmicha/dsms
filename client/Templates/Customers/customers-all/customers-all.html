@@ -1,0 +1,87 @@
+<template name="Customers">
+	<div class="ui basic inverted brown very padded segment">
+		<div class="ui container">
+			<h1 class="ui header">
+				Contacts - ({{customersCount}})
+			</h1>
+			<a href="{{pathFor 'customers.new'}}" class="ui right floated basic green button">
+				add
+			</a>			
+ 			<!-- <div class="ui large inverted left icon input">
+				{{> EasySearch.Input index=customersAllIndex attributes=inputAttributes}}
+				<i class="search link icon"></i>
+			</div> -->		
+		</div>
+	</div>
+	<div class="ui main container">
+		<!-- {{#EasySearch.Each index=customersAllIndex }} -->
+		{{#each customers}}
+			<div class="ui fluid card">
+				<div class="content">
+					<a href="{{pathFor 'customer.detail' _id=__originalId}}" class="header">	{{firstname}} {{lastname}}
+					</a>
+					<div class="meta">
+						<i class="phone icon"></i>
+						{{tel}}
+						<i class="phone icon"></i>
+						yes
+					</div>
+				</div>
+			</div>
+		{{/each}}	
+		<!-- {{/EasySearch.Each}} -->
+	</div>
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

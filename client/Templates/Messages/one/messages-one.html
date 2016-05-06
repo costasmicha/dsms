@@ -1,0 +1,34 @@
+<template name="MessagesOne">
+
+	{{> messagesMenu}}
+
+	<div class="ui main container">		
+		<section class="ui raised very padded segment">
+			<form class="ui form">
+				<div class="field">
+					<label>To</label>
+					<div class="ui fluid search selection dropdown">
+						{{> EasySearch.Input index=customersIndex attributes=inputAttributes}}
+						<i class="dropdown icon"></i>
+						<div class="default text">Select Customer</div>
+						<div class="menu">
+							{{#EasySearch.Each index=customersIndex }}
+								<div class="item" data-value="{{__originalId}}">
+									{{firstname}} {{lastname}}
+								</div>
+							{{/EasySearch.Each}}
+						</div>
+					</div>
+				</div>
+				<div class="field">
+					<label>Text</label>
+					<textarea name="text" rows="3"></textarea>
+				</div>
+				<button type="submit" class="ui green submit button">
+					<i class="send icon"></i>
+					Send
+				</button>
+			</form>
+		</section>	
+	</div>
+</template>

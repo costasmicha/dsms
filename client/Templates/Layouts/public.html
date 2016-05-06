@@ -1,0 +1,17 @@
+<template name="public">
+	<div class="ui fixed inverted green menu">
+		<div class="ui container">
+			<div class="borderless header item">DSMS</div>
+			{{#unless currentUser}}
+				<div class="right menu">
+					<div class="borderless item">
+						<a href="{{pathFor 'atSignIn' }}">Eίσοδος</a>
+					</div>
+				</div>
+			{{/unless}}
+		</div>
+	</div>
+	<div class="ui auth basic segment">
+		{{> Template.dynamic template=yield}}
+	</div>
+</template>

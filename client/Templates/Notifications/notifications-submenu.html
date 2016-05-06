@@ -1,0 +1,20 @@
+<template name="notificationsMenu">
+	<div class="ui no-padd-bottom basic inverted brown very padded segment">
+		<div class="ui container">
+			<h1 class="ui header">
+				Notifications
+			</h1>
+			<div class="ui three item secondary pointing menu">
+				<a href="{{pathFor 'notifications.tomorrow'}}" class="{{isActiveRoute regex='tomorrow'}} item">
+					Αυριανά ραντεβού
+				</a>
+				<a href="{{pathFor 'notifications.jobs'}}" class="{{isActiveRoute regex='jobs'}} item">
+					Αυτόματες ειδοποιήσεις
+				</a>
+				<a href="{{pathFor 'words.all'}}" class="{{isActiveRoute regex='words'}} item">
+					Κείμενα SMS
+				</a>				
+			</div>	
+		</div>
+	</div>
+</template>

@@ -1,0 +1,20 @@
+<template name="Home">	
+	<div class="sixteen wide column">
+		<div class="ui pad-top basic center aligned segment">
+			<div class="ui small image">
+				<img src="/images/logo.png">
+			</div>
+		</div>
+
+		<div class="ui pad-top basic center aligned segment">
+			{{#if currentUser}}
+				<h2 class="ui center aligned header">
+					Welcome {{niceName user._id}}
+				</h2>
+			{{else}}
+				<a href="{{pathFor 'atSignIn' }}" class="ui green big button">sign in</a>
+			{{/if}}
+		</div>
+	</div>
+
+</template>

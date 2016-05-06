@@ -1,0 +1,35 @@
+<template name="MessagesAll">
+
+	{{> messagesMenu}}
+
+	<div class="ui main container">
+		<section class="ui raised very padded segment">
+			<form class="ui form">
+				<div class="inline fields">
+					<label for="allOrNoty">Send To:</label>
+					<div class="field">
+						<div class="ui radio checkbox">
+							<input type="radio" id="all" name="allOrNoty" checked="" tabindex="0" class="hidden">
+							<label>All</label>
+						</div>
+					</div>
+					<div class="field">
+						<div class="ui radio checkbox">
+							<input type="radio" id="onlyNoty" name="allOrNoty" tabindex="0" class="hidden">
+							<label>All who receive notifications</label>
+						</div>
+					</div>
+				</div>
+				<div class="field">
+					<label>Text</label>
+					<p>Type #name in the place you want name to appear in the sms</p>
+					<textarea name="text" rows="3"></textarea>
+				</div>
+				<button type="submit" class="ui green submit button">
+					<i class="send icon"></i>
+					Send
+				</button>
+			</form>
+		</section>	
+	</div>
+</template>

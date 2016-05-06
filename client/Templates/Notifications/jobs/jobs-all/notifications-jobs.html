@@ -1,0 +1,45 @@
+<template name="NotificationsJobs">
+
+	{{> notificationsMenu}}
+
+	{{#if tasks.count}}
+		<div class="ui main container">
+			{{#each tasks}}
+				<div class="ui fluid card">
+					<div class="content">
+						<div class="header">
+							{{jobName}}
+						</div>
+						<div class="meta">
+							<i class="clock icon"></i>
+							{{recurrence}}
+						</div>
+					</div>
+					<div class="extra content">
+						<button data-action="getNextRun" class="ui purple button">
+							next run
+						</button>
+						<a href="/notifications/jobs/{{_id}}/edit" class="ui yellow button">
+							edit
+						</a>
+						<button data-action="deleteTask" class="ui red button">delete</button>
+					</div>
+				</div>
+			{{/each}}
+		</div>		
+	{{else}}
+		<div class="ui main container">
+			<section class="ui segment">
+				<h3 class="ui header">no results found</h3>
+			</section>
+		</div>	
+	{{/if}}
+
+	<div class="ui center aligned basic segment">
+		<a href="{{pathFor route='notifications.jobs.new'}}" class="ui green big basic button">
+			<i class="plus icon"></i>
+			add a job
+		</a>
+	</div>
+
+</template>

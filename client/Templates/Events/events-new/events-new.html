@@ -1,0 +1,47 @@
+<template name="EventsNew">
+	<div class="ui main container">
+		<section class="ui raised very padded segment">
+			<h2 class="ui header">
+				Νέο Ραντεβού
+			</h2>			
+			<form class="ui form">
+				<div class="field">
+					<label>customer</label>
+					<select class="ui dropdown" id="customer">
+						<option value=""></option>
+						{{#each customers}}
+							<option value="{{_id}}">{{firstname}} {{lastname}}</option>
+						{{/each}}
+					</select>
+				</div>
+				<div class="field">
+					<label>starting at</label>
+					<input class="ui fluid dropdown datetimepicker" type="text" name="start"/>
+				</div>
+				<div class="field">
+					<label>duration</label>
+					<select class="ui dropdown" id="duration">
+						<option value=""></option>
+						{{#each durationOptions}}
+							<option value="{{this}}">{{this}}</option>
+						{{/each}}
+					</select>
+				</div>				
+				<div class="field">
+					<label>type</label>
+					<select class="ui dropdown" id="appointmentTypes">
+						<option value=""></option>
+						{{#each appointmentTypes}}
+							<option value="{{this}}">{{this}}</option>
+						{{/each}}
+					</select>
+				</div>				
+				<button type="submit" class="ui green submit button">Submit</button>
+			</form>
+		</section>
+	</div>
+</template>
+
+
+
+

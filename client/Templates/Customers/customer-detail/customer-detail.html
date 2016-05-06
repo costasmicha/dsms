@@ -1,0 +1,67 @@
+<template name="CustomerDetail">
+	<div class="ui basic inverted brown very padded segment">
+		<div class="ui container">
+			{{#with customer}}
+				<h1 class="ui header">
+					{{firstname}} {{lastname}}
+					<a href="/customers/{{_id}}/edit" class="ui right floated basic green button">
+						<i class="edit icon"></i>
+						edit
+					</a>
+					<button data-action="delete" class="ui right floated basic red button">
+						<i class="delete icon"></i>
+						delete
+					</button>					
+				</h1>
+			{{/with}}
+
+			<h3 class="ui header">
+				Last
+				<span class="sub header">
+					{{#with nextEvent}}
+						{{formatdate startAt}}
+					{{else}}
+						none
+					{{/with}}
+				</span>				
+			</h3>
+			<h3 class="ui header">
+				Total
+				<span class="sub header">
+					{{eventsCount}}
+				</span>				
+			</h3>			
+		</div>
+	</div>
+
+	{{#with customer}}
+
+	<div class="ui main container">
+		<section class="ui very padded segment">
+			<h2 class="ui header">
+				Στοιχεία Επαφής
+			</h2>
+
+			<h3 class="ui header">
+				{{tel}}
+				<span class="sub header">
+					phone
+				</span>				
+			</h3>
+			<h3 class="ui header">
+				{{email}}
+				<span class="sub header">
+					mail
+				</span>				
+			</h3>
+			<h3 class="ui header">
+				{{notificationsState}}
+				<span class="sub header">
+					notifications
+				</span>				
+			</h3>
+		</section>
+	</div>			
+	{{/with}}
+
+</template>

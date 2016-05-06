@@ -1,0 +1,105 @@
+/* CSS declarations go here */
+.main {
+  margin-bottom: 71px;
+}
+
+.ui.no-padd-bottom.segment {
+	padding-bottom: 0px;
+}
+
+.no-p-l.column {
+	padding-left: 0px;
+}
+
+div.no-p-l.twelve.wide.column {
+	padding-left: 0px;
+}
+
+
+.ui.no-marg-bottom.secondary.menu {
+	margin-bottom: 0px;
+	/*padding-top: 1em;*/
+}
+
+.ui.no-marg-top.secondary.menu {
+	margin-top: 0px;
+}
+
+.ui.secondary.menu .active.item {
+	border-radius: 0rem;
+}
+
+.ui.no-marg-top.segment {
+	margin-top: 0px;
+}
+
+.ui.no-marg-bottom.segment {
+	margin-bottom: 0px;
+}
+
+.ui.no-m-top {
+	margin-top: 0px;
+}
+
+.no-p.column {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.no-p.mobile.only.row {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+
+.ui.pad-top {
+	padding-top: 30px;
+}
+
+.ui.pad-top-10 {
+	padding-top: 10px;
+}
+
+.ui.pad-bot-10.segment {
+	padding-bottom: 10px;
+}
+
+.ui.pad-left {
+	padding-left: 18px;
+}
+
+.ui.no-border.segment {
+	border: none;
+}
+
+.ui.grid > .m-b-2.row {
+	margin-bottom: 2px;
+}
+
+.ui.form .ui.f-w.input {
+	width: 95%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

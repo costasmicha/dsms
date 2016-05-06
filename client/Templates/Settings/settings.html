@@ -1,0 +1,63 @@
+<template name="Settings">
+	<div class="ui main container">
+		<section class="ui raised very padded segment">
+			<h2 class="ui header">
+				Όνομα Αποστολέα
+				<span class="sub header">
+					current name: {{user.profile.smsFromName}}
+				</span>
+			</h2>
+			<p>Το Όνομα Αποστολέα πρέπει</p>
+			<ul class="ui list">
+				<li class="item">Να περιέχει μόνο λατινικούς χαρακτήρες ή αριθμούς.</li>
+				<li class="item">Να είναι από 1 μέχρι και 11 χαρακτήρες.</li>
+			</ul>			
+			<form id="sender" class="ui form">
+				<div class="field">
+					<div class="ui fluid input">
+						<input type="text" name="fromName" placeholder="Name...">
+					</div>
+				</div>
+				<button type="submit" class="ui large green button">save</button>
+			</form>
+		</section>
+
+		<section class="ui raised very padded segment">
+			<h2 class="ui header">
+				<a href="{{pathFor 'users.new'}}" class="ui right floated basic green button">
+					add
+				</a>			
+				Χρήστες
+			</h2>
+			<div class="ui section divider"></div>
+			<div class="ui stackable doubling cards">
+				{{#each people}}
+					<div class="ui card">
+						<div class="content">
+							{{profile.first}} {{profile.last}}
+							<div class="meta">
+								{{roles}}
+							</div>
+						</div>
+						<div class="extra content">
+							<div class="ui two buttons">
+								{{#if isAdmin _id}}
+									<button data-action="removeAdmin" class="ui basic yellow button">
+										remove admin
+									</button>
+								{{else}}							
+									<button data-action="makeAdmin" class="ui basic green button">
+										make admin
+									</button>
+								{{/if}}								
+								<button data-action="deleteUser" class="ui basic red button">delete</button>
+							</div>
+						</div>						
+					</div>
+				{{/each}}
+			</div>
+		</section>
+
+
+	</div>
+</template>

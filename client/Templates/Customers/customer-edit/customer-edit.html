@@ -1,0 +1,10 @@
+<template name="CustomerEdit">	
+	<div class="ui main container">
+		<section class="ui very padded segment">
+			<h2 class="ui header">
+				Επεξεργασία Επαφής
+			</h2>			
+			{{> quickForm collection="Customers" doc=customer id="editCustomerForm" type="update"}}
+		</section>
+	</div>
+</template>

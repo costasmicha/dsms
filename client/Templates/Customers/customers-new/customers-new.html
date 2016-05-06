@@ -1,0 +1,114 @@
+<template name="CustomersNew">
+	<div class="ui main container">	
+		<section class="ui very padded segment">
+			<h2 class="ui header">
+				Νέα Επαφή
+			</h2>	
+			<form class="ui form">
+				<div class="field">
+					<label>Όνομα</label>
+					<input type="text" name="firstname"/>
+				</div>
+				<div class="field">
+					<label>Επίθετο</label>
+					<input type="text" name="lastname"/>
+				</div>
+				<div class="field">
+					<label>Τηλέφωνο</label>
+					<input type="text" name="tel"/>
+				</div>
+				<div class="field">
+					<label>email</label>
+					<input type="email" name="email"/>
+				</div>
+				<div class="inline field">
+					<div class="ui toggle checkbox">
+						<input type="checkbox" tabindex="0" class="hidden" name="notifications">
+						<label>notifications</label>
+					</div>
+				</div>				
+				<button type="submit" class="ui green submit button">Submit</button>
+			</form>
+		</section>
+
+		<section class="ui very padded segment">
+			<h2 class="ui header">
+				Αρχείο Επαφών Gmail
+			</h2>	
+			<div class="ui basic segment">
+				<p>
+					Επιλογή αρχείου csv επαφών Gmail.
+					<a href="{{pathFor 'csv'}}">Οδηγίες</a>
+				</p>
+
+
+				<div class="inline field">
+					<label>Επιλογή αρχείου</label>
+					<input type="file" id="csv-file" name="csv-file"/>
+				</div>				
+			</div>
+			{{#if previewCustomers.count}}
+				<div class="ui basic segment">
+					<h3 class="ui header">
+						<a data-action="addAllPreview" class="ui right floated green button">
+							add all
+						</a>
+						<div class="content">
+							Preview - {{previewCustomers.count}} επαφές
+							<p class="sub header">
+								click on any field for guick editing
+							</p>
+						</div>
+					</h3>
+				</div>
+				<div class="ui basic segment">	
+					<table class="ui very basic celled fixed table">
+						<thead>
+							<tr>
+								<th>Όνομα</th>
+								<th>Επίθετο</th>
+								<th>Τηλέφωνο</th>
+								<th>Email</th>
+								<th>actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							{{#each previewCustomers}}
+								<tr class="preview-row">
+									<td>
+										<div class="ui transparent fluid input">
+											<input type="text" name="previewFirstname" value="{{firstname}}">
+										</div>										
+									</td>
+									<td>
+										<div class="ui transparent fluid input">
+											<input type="text" name="previewLastname" value="{{lastname}}">
+										</div>
+									</td>
+									<td>
+										<div class="ui transparent fluid input">
+											<input type="text" name="previewTel" value="{{tel}}">
+										</div>										
+									</td>
+									<td>
+										<div class="ui transparent fluid input">
+											<input type="text" name="previewMail" value="{{email}}">
+										</div>										
+									</td>									
+									<td>
+										<button data-action="removePreview" class="ui red icon compact button">
+											<i class="delete icon"></i>
+										</button>
+										<button data-action="addPreview" class="ui green icon compact button">
+											<i class="plus icon"></i>
+										</button>										
+									</td>
+								</tr>
+							{{/each}}
+						</tbody>
+					</table>					
+				</div>
+			{{/if}}
+		</section>		
+	</div>
+</template>

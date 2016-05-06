@@ -1,0 +1,98 @@
+<template name="header">
+	<div class="ui fixed inverted green menu">
+		<div class="ui container">
+			<a href="/" class="header borderless item">
+				DSMS
+			</a>
+			<div class="right menu">
+				{{#if currentUser}}
+					<a href="{{pathFor 'profile' }}" class="borderless item">
+						{{user.profile.first}}
+					</a>
+					<a data-action="logout" class="borderless item">
+						<i class="sign out icon"></i>
+					</a>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+	<div class="ui no-marg-bottom secondary inverted stackable mine big menu">
+		<div class="ui container">
+			<a href="{{pathFor 'customers.all'}}" class="item {{isActiveRoute regex='customers'}}">
+				Επαφές
+			</a>
+			<a href="{{pathFor 'messages'}}" class="item {{isActiveRoute regex='messages'}}">
+				SMS
+			</a>
+<!-- 			<a href="{{pathFor 'notifications.tomorrow'}}" class="item {{isActiveRoute regex='notifications'}}">
+				Ειδοποιήσεις
+			</a>		  
+			<a href="{{pathFor 'events.all'}}" class="item {{isActiveRoute regex='events'}}">
+				Ραντεβού
+			</a> -->
+			<a href="{{pathFor 'settings'}}" class="ui item {{isActiveRoute regex='settings'}}">
+				Ρυθμίσεις
+			</a>
+		</div>
+	</div>
+
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

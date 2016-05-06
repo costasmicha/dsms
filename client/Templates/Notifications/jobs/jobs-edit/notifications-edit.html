@@ -1,0 +1,8 @@
+<template name="NotificationsJobsEdit">
+	{{> notificationsMenu}}
+	<section class="ui padded raised segment">
+		<div class="ui text container">
+			{{> quickForm collection="Tasks" doc=task id="editTaskForm" type="update"}}
+		</div>
+	</section>
+</template>

@@ -1,0 +1,11 @@
+<template name="NotificationsJobsNew">
+	{{> notificationsMenu}}
+	<div class="ui main container">
+		<section class="ui very padded raised segment">
+		<h2 class="ui header">
+			Νέα Αυτόματη ειδοποίηση
+		</h2>
+		{{> quickForm collection="Tasks" id="insertTaskForm" type="insert"}}
+		</section>
+	</div>
+</template>

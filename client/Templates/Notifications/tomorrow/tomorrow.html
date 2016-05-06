@@ -1,0 +1,38 @@
+<template name="Tomorrow">
+	{{> notificationsMenu}}
+
+	{{#if customers.count}}
+		<div class="ui main container">
+			{{#each customers}}
+				<div class="ui fluid card">
+					<div class="content">
+						<a href="{{pathFor 'customer.detail' _id=_id}}" class="header">
+							{{firstname}} {{lastname}}
+						</a>
+						<div class="meta">
+							<i class="phone icon"></i>
+							{{tel}}
+							<i class="announcement icon"></i>
+							{{notificationsState}}
+						</div>
+					</div>
+				</div>
+			{{/each}}
+		</div>
+		<div class="ui fluid basic segment">
+			<div class="ui center aligned basic segment">
+				<button class="ui red big basic button" data-action="sendSMS">
+					<i class="send icon"></i>
+					send sms notification
+				</button>
+			</div>
+		</div>		
+	{{else}}
+		<section class="ui padded basic segment">
+			<h3 class="ui center aligned header">no customers for tomorrow</h3>
+		</section>
+	{{/if}}
+
+
+
+</template>

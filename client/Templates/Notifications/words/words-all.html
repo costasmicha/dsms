@@ -1,0 +1,51 @@
+<template name="WordsAll">
+
+	{{> notificationsMenu}}
+
+	{{#if words.count}}
+		<div class="ui main container">
+			{{#each words}}
+				<div class="ui fluid card">
+					<div class="content">
+						<div class="header">
+							{{text}}
+						</div>
+						<div class="meta">
+							{{#if selected}} selected {{/if}}
+						</div>
+					</div>
+					<div class="extra content">
+						{{#if selected}}
+						<button data-action="unSelectWord" class="ui yellow button">
+							unselect
+						</button>
+						{{else}}
+						<button data-action="selectedWord" class="ui green button">
+							select
+						</button>
+						{{/if}}
+						<button data-action="deleteWord" class="ui red button">delete</button>
+					</div>
+				</div>
+			{{/each}}
+		</div>
+	{{else}}
+		<div class="ui main container">
+			<section class="ui segment">
+				<h3 class="ui header">no results found</h3>
+			</section>
+		</div>	
+	{{/if}}
+
+	<div class="ui center aligned basic segment">
+		<a href="{{pathFor 'words.new'}}" class="ui green big basic button">
+			<i class="plus icon"></i>
+			add new
+		</a>
+	</div>	
+
+</template>
+
+
+
+

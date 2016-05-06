@@ -1,0 +1,97 @@
+<template name="EventsAll">
+
+	<div class="ui basic inverted brown very padded segment">
+		<div class="ui container">
+			<h1 class="ui header">
+				Ραντεβού
+				<a href="{{pathFor 'events.new'}}" class="ui right floated basic green button">
+					<i class="plus icon"></i>
+					Νέο
+				</a>
+			</h1>
+
+			<h3 class="ui header">
+				{{week weekStart}} - {{week weekEnd}}
+				<div class="ui right floated compact menu">
+					<a data-action="previousWeek" class="borderless item">
+						<i class="left angle icon"></i>
+					</a>
+					<a data-action="nextWeek" class="borderless item">
+						<i class="right angle icon"></i>
+					</a>
+				</div>			
+				<span class="sub header">
+					Εβδομάδα
+				</span>				
+			</h3>
+
+			<h3 class="ui header">
+				{{day now}}
+				<div class="ui right floated compact menu">
+					<a data-action="previousDay" class="borderless item">
+						<i class="left angle icon"></i>
+					</a>
+					<a data-action="nextDay" class="borderless item">
+						<i class="right angle icon"></i>
+					</a>
+				</div>
+				<span class="sub header">
+					Ημέρα
+				</span>				
+			</h3>
+
+		</div>
+	</div>
+
+
+
+	{{#if allevents.count}}
+		<div class="ui main container">
+			{{#each allevents}}
+				<div class="ui fluid card">
+					<div class="content">
+						<div class="header">{{time24 startAt}}</div>
+					</div>
+					<div class="content">
+						<div class="header">
+							{{getCustomer.fullname}}
+						</div>
+						<div class="right floated red meta">
+							{{#if canceled}}
+								Ακυρομένο
+							{{/if}}
+						</div>
+						<div class="meta">
+							<i class="clock icon"></i>
+							{{type}}
+							{{duration}}
+						</div>
+					</div>
+					<div class="extra content">
+						{{#if canceled}}
+							<button data-action="unCancelEvent" class="ui yellow button">
+								activate
+							</button>								
+						{{else}}
+							<button data-action="cancelEvent" class="ui yellow button">
+								cancel
+							</button>
+						{{/if}}
+						<button data-action="deleteEvent" class="ui red button">delete</button>
+					</div>
+				</div>
+			{{/each}}
+		</div>
+	{{else}}
+		<div class="ui main container">
+			<section class="ui segment">
+				<h3 class="ui header">no results found</h3>
+			</section>
+		</div>	
+	{{/if}}
+
+</template>
+
+
+
+

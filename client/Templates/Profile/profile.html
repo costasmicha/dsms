@@ -1,0 +1,38 @@
+<template name="Profile">
+	<div class="ui main container">
+		<section class="ui very padded segment">
+			<h2 class="ui header">
+				Profile settings
+			</h2>		
+			<form class="ui form">
+				<div class="two fields">
+					<div class="field">
+						<label>First Name</label>
+						<input type="text" name="first" value="{{user.profile.first}}">
+					</div>
+					<div class="field">
+						<label>Last Name</label>
+						<input type="text" name="last" value="{{user.profile.last}}">
+					</div>
+				</div>
+				<div class="field">
+					<label>password</label>
+					<a href="{{pathFor 'atChangePwd'}}" class="ui green basic button">
+						change password
+					</a>
+				</div>
+				<div class="two fields">
+					<div class="field">
+						<label>Email</label>
+						<input type="text" name="email" value="{{user.mail}}">
+					</div>
+					<div class="field">
+						<label>Phone</label>
+						<input type="text" name="phone" value="{{user.profile.phone}}">
+					</div>
+				</div>
+				<button type="submit" class="ui green submit button">Submit</button>
+			</form>
+		</section>
+	</div>
+</template>
